@@ -22,6 +22,8 @@ public class Usuario extends PanacheEntityBase {
 
 	private String password;
 
+	private String role;
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
@@ -36,5 +38,9 @@ public class Usuario extends PanacheEntityBase {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 }
