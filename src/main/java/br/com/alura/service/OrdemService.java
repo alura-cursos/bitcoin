@@ -1,6 +1,7 @@
 package br.com.alura.service;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Optional;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -26,5 +27,9 @@ public class OrdemService {
 		ordem.setData(LocalDate.now());
 		ordem.setStatus("ENVIADA");
 		ordemRepository.persist(ordem);
+	}
+
+	public List<Ordem> listar() {
+		return ordemRepository.listAll();
 	}
 }
