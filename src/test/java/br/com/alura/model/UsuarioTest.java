@@ -14,7 +14,7 @@ import io.quarkus.test.junit.QuarkusTest;
 public class UsuarioTest {
 
 	@Test
-	public void testarSeFindByIdOptionalDevolveUsuarioCorreto() {
+	public void testarSeFindByIdOptionaRetornaUsuarioCorreto() {
 		PanacheMock.mock(Usuario.class);
 		
 		Usuario u = new Usuario();
@@ -24,5 +24,4 @@ public class UsuarioTest {
 		
 		Assertions.assertSame(u, Usuario.findByIdOptional(40).get());
 	}
-
 }
