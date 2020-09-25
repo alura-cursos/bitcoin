@@ -18,14 +18,17 @@ public class OrdemRepositoryTest {
 	OrdemRepository ordemRepository;
 
 	@Test
-	public void testarSeListAllRetornaTodasAsOrdensCorretas() {
-		Ordem ordem = new Ordem();
-		List<Ordem> ordens = new ArrayList<>();
-		ordens.add(ordem);
+	public void testarSeListAllRetornaOrdensCorretas() {
+		Ordem primeiraOrdem = new Ordem();
+		Ordem segundaOrdem = new Ordem();
+		List<Ordem> ordens = new ArrayList<Ordem>();
+
+		ordens.add(primeiraOrdem);
+		ordens.add(segundaOrdem);
 
 		Mockito.when(ordemRepository.listAll()).thenReturn(ordens);
 
-		Assertions.assertSame(ordem, ordemRepository.listAll().get(0));
+		Assertions.assertSame(segundaOrdem, ordemRepository.listAll().get(1));
 	}
 
 }
