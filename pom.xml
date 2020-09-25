@@ -71,6 +71,11 @@
 			<artifactId>quarkus-security-jpa</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>io.quarkus</groupId>
+			<artifactId>quarkus-panache-mock</artifactId>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<plugins>
