@@ -7,7 +7,7 @@ services:
       context: ./
       dockerfile: src/main/docker/Dockerfile.${QUARKUS_MODE:-jvm}
     environment:
-      QUARKUS_DATASOURCE_URL: jdbc:mysql://mysql-bitcoin:3306/bitcoin?autoReconnect=true
+      QUARKUS_DATASOURCE_URL: jdbc:mysql://mysql-bitcoin:3306/bitcoin_negotiation?autoReconnect=true
     networks:
       - mysql-db    
     ports:
@@ -16,11 +16,9 @@ services:
       - mysql-bitcoin
 
   mysql-bitcoin: 
-    image: mysql:8.0
+    image: aluracursos/mysql-quarkus-db:latest
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=bitcoin
-      - MYSQL_USER=root
       - MYSQL_PASSWORD=root
     volumes:
       - mysql.bitcoin:/var/lib/mysql
