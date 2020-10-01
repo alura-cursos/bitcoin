@@ -10,7 +10,8 @@ public class BitcoinResourceTest {
 	
 	@Test
 	public void testarSeStatusCodeDaRequisicaoE200() {
-		RestAssured.given().get("/bitcoins").then().statusCode(200);
+		RestAssured
+			.given().get("bitcoins").then().statusCode(200);
 	}
 
 }
